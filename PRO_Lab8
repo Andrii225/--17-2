@@ -1,0 +1,18 @@
+int Functor :: count = 0;
+mutex Functor :: myMutex;
+класний функціонер
+{
+приватний:
+статичний int count;
+статичний мютекс SumMutex;
+загальнодоступний:
+// Ìåòîäè fôóktòîðà
+// ...
+void operator () (const заблокований_порядковий <int> & Діапазон) const
+{
+mutex :: замок scoped_lock;
+lock.acquire (myMutex);
+рахувати ++;
+lock.release ();
+}
+}; 
