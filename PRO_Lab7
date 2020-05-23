@@ -1,0 +1,16 @@
+#include <cilk / reducer.h> точка класу
+{
+// Òóò– âççíà ÷ åííÿ êëàñó точка
+};
+клас_власник
+{
+struct Monoid: cilk :: monoid_base <точка>
+{
+статичне зменшення порожнеч (точка * зліва, точка * праворуч) {}
+};
+приватний: cilk :: reducer <Monoid> imp_; загальнодоступний:
+point_holder (): imp_ () {} недійсний набір (int x, int y) {point & p = imp_.view (); p.set (x, y); 
+}
+bool is_valid () {return imp_.view (). is_valid (); } int x () {return imp_.view (). x (); }
+int y () {return imp_.view (). y (); }
+};
