@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <omp.h>
+omp_lock_t замок;
+int main (int argc, char * argv [])
+{
+int n;
+ omp_init_lock (& ​​замок);
+#pragma omp паралельне приватне (n)
+ {
+ n = omp_get_thread_num ();
+omp_set_lock (& ​​замок);
+ printf ("Pochatok zakritoi cekcii, potik% d \ n", n);
+ printf ("Kinec 'zakritoi cekcii, potik% d \ n", n);
+ omp_unset_lock (& ​​замок);
+ }
+ omp_destroy_lock (& ​​замок);
+}
